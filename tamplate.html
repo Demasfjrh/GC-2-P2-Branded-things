@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <title>Cyber Neon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        
+        .flicker {
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes glow-border {
+            0% { box-shadow: 0 0 10px #6b21a8; }
+            50% { box-shadow: 0 0 20px #9333ea, 0 0 30px #6b21a8; }
+            100% { box-shadow: 0 0 10px #6b21a8; }
+        }
+
+        .glow-border {
+            animation: glow-border 2s infinite alternate;
+        }
+
+        .glitch {
+            position: relative;
+            color: #9333ea;
+            text-shadow: 2px 2px 5px rgba(147, 51, 234, 0.8);
+        }
+
+        .glitch::before {
+            content: attr(data-text);
+            position: absolute;
+            left: -2px;
+            text-shadow: -2px 0 #6b21a8;
+            animation: glitch 0.3s infinite alternate;
+        }
+
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            text-shadow: 2px 0 #9333ea;
+            animation: glitch 0.3s infinite alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-1px); }
+            100% { transform: translateY(1px); }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center bg-black p-4 relative bg-opacity-20 bg-gradient-to-r from-purple-900 via-black to-purple-900 shadow-lg flicker">
+        <h1 class="text-2xl text-purple-400 font-bold glow-text">Brand Phone Gaming</h1>
+        <nav class="p-3 rounded-lg shadow-lg glow-border">
+            <button class="px-4 py-2 text-white bg-purple-700 rounded-lg hover:bg-purple-800 hover:shadow-lg hover:shadow-purple-500 transition-all animate-pulse">
+                <a href="#" class="cursor-pointer">Models</a>
+            </button>
+            <button class="px-4 py-2 text-white bg-purple-700 rounded-lg hover:bg-purple-800 hover:shadow-lg hover:shadow-purple-500 transition-all animate-pulse">
+                <a href="#" class="cursor-pointer">Home</a>
+            </button>
+            <button class="px-4 py-2 text-white bg-purple-700 rounded-lg hover:bg-purple-800 hover:shadow-lg hover:shadow-purple-500 transition-all animate-pulse">
+                <a href="#" class="cursor-pointer">HAHAHA</a>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="group p-4 border border-purple-900 rounded-lg shadow-lg glow-border transition-all transform hover:translate-y-2">
+                <img src="https://th.bing.com/th/id/OIP.KhZqV6Mm4mBdz9wVHgRKBQHaEo?w=301&h=187&c=7&r=0&o=5&dpr=1.1&pid=1.7" 
+                     alt="rog" class="w-full rounded-lg">
+                <p class="text-center mt-2 text-purple-400 font-bold">ROG Edition</p>
+            </div>
+            <div class="group p-4 border border-purple-900 rounded-lg shadow-lg glow-border transition-all transform hover:translate-y-2">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCADKAWwDASIAAhEBAxEB/8QAGwABAQADAQEBAAAAAAAAAAAAAAUBAwQGAgf/xAA4EAEAAgEDAgEJBgYBBQAAAAAAAQIDBAUREiExEzRBUWFyc7GyFDI1cYHBIiMkUqGiQmKDkpPR/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAIEAQMGBQf/xAAxEQEAAQQABAMFBwUAAAAAAAAAAQIDBBEFEiExIlGhExRBcbEVFjIzYYGRNUKCstH/2gAMAwEAAhEDEQA/APyIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOOQBn9Bd2/RaXWaDjJXi8ZcvTkrEdUeHj64Qqq5Y3K/g4NzOuTatd9TP8IRw36vTZNJnyYLzW1qdM81ntMWiLR4u7bdsrqaxnzW/kxaaxSv3rzHjzPqJqiI5jHwL+Rke60U+P4/p57SpYUd4pjx6y1Mda1rXHiiK1iIiP4I8OE5KmdxtoybE492q1V3pnQAyrgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD7x0yZLRSlZtaeeK1jmZ4jnwfEO7apn7fpPet9MyxM6jaxjWvbXqLW9bmI/lxzEx48xPp5ek2XzKY9WbJ8oad80+CMWPU1pFc1svRaaxxFo6ZnvHrbtl8yn42T5VV7lXNb27Lg2DVgcYmxXO9Uz6pe9/iGf3MP0Qq7N5jT42X9krevxDP7mH6IVdm8xp8bL+xc/KhLhP9eu/Or6pe9ef5fcxfTDgpiy3jJNKWmMdeu8xHatfDmZUN3iJ3G8T6Ywx29tYhZ1ODBptu1uLDSK1jD+tp6o72n1p8/LEQ82vhdWdlZV3m1TRMzPn8eno8kDPobnKsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+qdHMdfPTzHPTxzx6eOV/SbXOLUaXVYc1b4PvxzHTfptWYj2PPx+65s+prkpk0ObvWa3tj9c1/5Vj5w1XdxG4e/wAC93qyYovx170zvXijrEfKXRvvmmKJ8fLx9Mmy+ZT8bJ8qpW4fbcFraTNlvfFS8ZMXVPMTEx2mP0dW17hgwYo0+THlmZva0Wxx1ePHbpju1VUT7PUPescTt1cam/fjk6a6+fZz71+IZvcw/RCrs0f0NPi5f2a9dtebW5p1VMlaVyVxx05a2rMcVivE8+lux+T2rS0x5vKZJ6slucWOenmfRMz2gqmJo1Dfg41zF4pdzL0at+Kd9NdZ6Je7fiU9vHyHyq9BqsV82n1WGvEWy06KzaeI56ome7y+u1carU21GOtqc9EViZiZiaRxzzCttlc+SMm4azLe1a1v5ObzPasfevEeHshmumYpifJX4XmW7mXkWKY5qbsz17RFPXc+qdrdvxaLFi683XnyzzWlY4rWseMzPj+Sc6dbqravUZctvCZ4pH9tI7RDlb6d66uPzarM36vd41RHb/oAkpgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEO7a541+k9t7R/rLhdOht0azR254iMtOZ/OeEau0rWFVyZFuryqj6rW/UpOm02SYjrrltSJ9PTNeeH1ssVjRzbpr1TlvE24jqmO3bnxN9j+jw+zPH0yzsvmX/eyfKqrufZPosW6fvDV0/t3++oTt6yZft2WnXbpiuGYjmeInojvwqbRe99DSb2m0+UyRzaee0cdu6RvX4hm9zD9EKuzc/Ya/Gy/slXGrcPO4VXVPHLtMz08X1S92pSNxtSta1raMPMViIjmYjmey3uEUxbbq6UiK1pipjrEeER1VjhG3b8T/APR8oVt3t07fqf8AryYqf7dX7MVdeVsxOW39o161rcf7PKALb56AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM1tNbVmPGJiY/OJ5YBmJ11el3W9c+2Yste8TkxX596ss7L5lPxsnyqnafP5bbdZo7T/HiiM2Hv41rbqtWPy7y7NivE4dTi9NMlbx7YtHH7KlVOqJh9CwMynJ4rZv/ABro1Pzje49HBvX4hm9zD9EK2zeYU+Ll/ZK3qI+35fHvjwz/AKQrbNX+hwR/dkyz+nVwlX+VDVwmmZ47e/y+qZuUde7TWPGb6ev+Kurf8sRTTYInvM2zWj2fdrz/AJctb0z7zfNaYjDjzXy2tPhGPFHj8nHrdTbV6nLmnwmeKR6qR2iE4p3Mfo8vIzaaLGVyz1u16/aNzv1coDc5UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9RaYnmJnlQ2nURh1Va27Uzfy7eyfGv+U1ms8Tz3ifXCNUbjSzi5FWNepvU96Z2rb7TjV47f34Mc/+PNXfps0aTZ8eae1ox38n7b3tPH/1L12prq9Nt+SbROalcuHLHpnpmJi36s7jqa2ppdJjnnHpsVK2mPCcvTHM/p4NPLMxFMuljiFvHysnLtT+KPD86tT6dU7qnv3n+Lx9vpYYkWHJTOwAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADn2AAzywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADbqIiM+piIiIjNkiIj0R1S1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqbdWk4LzNazPlbeMRP/ABqD/9k=" 
+                     alt="rog" class="w-full rounded-lg">
+                <p class="text-center mt-2 text-purple-400 font-bold">NUBIA RED MAGIC Edition</p>
+            </div>
+            <div class="group p-4 border border-purple-900 rounded-lg shadow-lg glow-border transition-all transform hover:translate-y-2">
+                <img src="https://wallpaperaccess.com/full/2822396.jpg" 
+                     alt="rog" class="w-full rounded-lg">
+                <p class="text-center mt-2 text-purple-400 font-bold">LENOVO LEGION Edition</p>
+            </div>
+            <div class="group p-4 border border-purple-900 rounded-lg shadow-lg glow-border transition-all transform hover:translate-y-2">
+                <img src="https://th.bing.com/th/id/OIP.Irj-WvN4qxT025Y3h6vrlgHaEK?w=272&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" 
+                     alt="rog" class="w-full rounded-lg">
+                <p class="text-center mt-2 text-purple-400 font-bold">IQOO Edition</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
